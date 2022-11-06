@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Caleculator</title>
+    <link href="css,js/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="CalculatorStyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-3">
+                    <div class="  mt-5">
+               
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="darkToggle"style="scrollbar-track-color:black;">
+                            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                        </div>
+
+                        <h1 class="ml2">Calculator in Java Script</h1>
+
+
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 my-auto mx-auto  all">
+
+                    <div class="px-3  " style="background-color: #361500;border-radius:30px;" id="divall">
+
+                        <div class="rounded text-center justify-content-center align-content-center mx-auto px-5 mt-5 py-4" style=" display: grid;">
+                            <input disabled="" placeholder="0" id="input" class=" rounded w-100 fw-bold  text-end"  type="text" pattern="^[0-9]*$" style="background-color: #EADEB8; font-size: 50px; height: 70px; border-color: white; margin-top: 30px; margin-bottom: 20px; color: #361500; "
+                                   maxlength="11" />
+                        
+
+
+                            <div class="d-flex">
+                                <button class="btn text-white text-center w-100 " onclick="onclicknum(7)">7</button>
+                                <button class="btn text-white text-center w-100" onclick="onclicknum(8)">8</button>
+                                <button class="btn text-white text-center w-100 " onclick="onclicknum(9)">9</button>
+                                <button class="btn w-100 text-center " id="DEL" onclick="onclickDelete()" style="background-color: #EADEB8; color: #361500">DEL</button>
+
+
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn text-white w-100" onclick="onclicknum(4)">4</button>
+                                <button class="btn text-white w-100 " onclick="onclicknum(5)">5</button>
+                                <button class="btn text-white w-100 " onclick="onclicknum(6)">6</button>
+                                <button class="btn  w-100 " onclick="onclicknum('+')" id="summation" style="background-color: #EADEB8;color:#361500;">+</button>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn text-white w-100" onclick="onclicknum(1)">1</button>
+                                <button class="btn text-white w-100 " onclick="onclicknum(2)">2</button>
+                                <button class="btn text-white w-100 " onclick="onclicknum(3)">3</button>
+                                <button class="btn  w-100 " onclick="onclicknum('-')" id="subtraction" style="background-color: #EADEB8;color:#361500;">-</button>
+                            </div>
+                            <div class="d-flex">
+                                <button class="btn text-white w-100 " onclick="onclicknum('.')">.</button>
+                                <button class="btn text-white w-100 " onclick="onclicknum(0)">0</button>
+                                <button class="btn  w-100 " onclick="onclicknum('/')" id="division" style="background-color: #EADEB8;color:#361500;">/</button>
+                                <button class="btn  w-100 " onclick="onclicknum('*')" id="multi" style="background-color: #EADEB8;color:#361500;">*</button>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <div class="">
+                                        <button class="btn w-100   text-center " id="RESET" style="background-color: #EADEB8;color:#361500;">RESET</button>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <div class="">
+                                        <button class="btn  w-100   text-center mx-auto" id="equal" onclick="onclickresult()" style="background-color: #EADEB8; color:#361500">=</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+
+
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let darkToggle = document.querySelector('#darkToggle');
+        let divall = document.getElementById('divall');
+        darkToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+            console.log('aaa');
+            divall.classList.add('.divall');
+            console.log('111');
+
+        });
+        let themeone = document.getElementById('theme-one');
+        let themetwo = document.getElementById('theme-two');
+        let themethree = document.getElementById('theme-three');
+        let btn = document.getElementsByClassName('btn');
+        let equl = document.getElementsByClassName('equal');
+        let input = document.getElementById('input');
+        let ipt = document.getElementById('ipt');
+        let DEL = document.getElementById('DEL');
+        let RESET = document.getElementById('RESET');
+
+       
+
+
+        function myFunction() {
+            var element = document.body;
+            element.classList.add('one');
+
+        }
+
+        function myFunction2() {
+            var element = document.body;
+            element.classList.add('two');
+
+        }
+    
+        function onclicknum(nums) {
+            { input.value = input.value + nums; }
+        }
+
+
+        RESET.addEventListener('click', function () {
+            input.value = "";
+        });
+
+
+            function onclickresult() {
+                input.value = eval(input.value);
+         //   }
+        }
+        input.addEventListener('click', function () {
+            { input.value = eval(input.value); }
+
+
+
+
+        });
+
+
+
+        function onclickDelete() {
+            input.value = input.value.substr(0, input.value.length - 1)
+        }
+
+
+        var textWrapper = document.querySelector('.ml2');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml2 .letter',
+                scale: [4, 1],
+                opacity: [0, 1],
+                translateZ: 0,
+                easing: "easeOutExpo",
+                duration: 950,
+                delay: (el, i) => 70 * i
+            }).add({
+                targets: '.ml2',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+
+        $(document).ready(function () {
+            $('input.disable_field').keyup(function () {
+                if ($(this).val().length === 0) {
+                    $('input.disable_field').prop('disabled', false);
+                } else {
+                    $('input.disable_field').prop('disabled', true);
+                    $(this).prop('disabled', false);
+                }
+            });
+        });
+
+    </script>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="css,js/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
